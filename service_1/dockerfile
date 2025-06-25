@@ -1,0 +1,11 @@
+FROM golang:1.22-slim
+
+WORKDIR /app
+COPY . .
+
+# Update OS packages (mitigating known CVEs)
+RUN apt-get update && apt-get upgrade -y && apt-get clean
+
+RUN go build -o service1 main.go
+EXPOSE 8001
+CMD ["./service1"]
