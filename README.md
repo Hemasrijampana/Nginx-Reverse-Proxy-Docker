@@ -20,7 +20,7 @@ A DevOps project to deploy two microservices — one in **Golang** and one in **
 
 ---
 
-## 📖 Project Overview
+##  Project Overview
 
 - Two backend services:
   -  Golang Service (`service_1`)
@@ -75,45 +75,41 @@ ASSIGNMENT/
 
 ---
 
-## 2️. Install Dependencies
+##  Install Dependencies
 
 SSH into EC2:
 ```bash
 ssh -i <key.pem> ubuntu@<ec2-public-ip>
 
-Install Docker:
+
+Install Docker
 
 sudo apt update && sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 
-Install Docker Compose:
 
+Install Docker Compose:
 sudo apt install docker-compose-plugin -y
 
 
 Install Docker Compose:
-
 sudo apt install docker-compose-plugin -y
-
 
 Check versions:
-
 docker --version
 docker compose version
 
- 3️. Clone the Project
 
+Clone the Project
 git clone https://github.com/Hemasrijampana/Nginx-Reverse-Proxy-Docker.git
 cd Nginx-Reverse-Proxy-Docker
 
 Running the Project:
-
 sudo docker compose up --build -d
 
 
 Check container status:
-
 sudo docker ps
 
 
@@ -125,7 +121,6 @@ GET	/service2/ping	{"status":"ok","service":"2"}
 GET	/service2/hello	{"message":"Hello from Service 2"}
 
 Access from browser or terminal:
-
 http://<ec2-public-ip>:8080/service1/ping
 http://<ec2-public-ip>:8080/service2/hello
 
@@ -141,7 +136,7 @@ sudo docker logs service2
 sudo docker logs nginx
 
 
-## Conclusion
+Conclusion
 ✔ Successfully containerized two microservices
 ✔ Configured Nginx reverse proxy with URL-based routing
 ✔ Orchestrated using Docker Compose
